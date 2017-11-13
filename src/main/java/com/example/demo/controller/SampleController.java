@@ -18,12 +18,20 @@ public class SampleController {
     @Autowired
     SampleService service;
 
+    /**
+     * goIndex
+     * @return
+     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String goIndex(){
         return "index";
     }
 
 
+    /**
+     * getTest
+     * @return
+     */
     @RequestMapping(value = "/test", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public @ResponseBody HashMap getTest(){
         return service.getData();
